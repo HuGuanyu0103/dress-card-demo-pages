@@ -17,20 +17,32 @@ dialog{padding:0;border:1px solid var(--line);border-radius:8px;width:min(580px,
 .exit-capture{opacity:0}.exit-capture:hover,.exit-capture:focus-visible{opacity:1}
 /* 配套卡面以可阅读为优先，右侧方向顺序排列，适合整页长截图。 */
 @media(min-width:1001px){.handout-modules{grid-template-columns:1fr;gap:20px}.module-cards,.guidance-module:only-child .module-cards{grid-template-columns:repeat(4,minmax(0,1fr));max-width:680px;gap:15px 14px}.handout-card{max-width:150px}.module-heading h2{font-size:25px}.module-heading p{font-size:14px;line-height:1.9}.guidance-module{padding:24px}.card-caption{font-size:11px}.summary{font-size:20px}.poster-layout{grid-template-columns:265px minmax(0,1fr)}.portrait-column{position:sticky;top:22px}.capture-mode .portrait-column{position:static}}
+/* 搜索首页恢复原版纸感构图，类名前缀隔离于截图海报。 */
+body{background:#f5f1e9}.home-masthead{max-width:1440px;margin:auto;padding:25px 56px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ded6c9}.home-brand{text-decoration:none;display:flex;gap:13px;align-items:center;font-size:17px;font-weight:700;color:#292724}.home-brand-mark{background:#292724;color:#f5f1e9;height:43px;width:39px;border-radius:6px;font-size:29px;text-align:center;line-height:43px}.home-brand-sub{display:block;font-size:10px;font-weight:400;letter-spacing:1.1px;color:#81786e}.home-edition{display:flex;align-items:center;gap:9px;color:#81786e;font-size:12px}.home-edition i{height:6px;width:6px;border-radius:50%;background:#a43e2f}.home-main{max-width:1440px;margin:auto;padding:0 56px}.home-hero{min-height:430px;display:grid;grid-template-columns:1.18fr 1fr;gap:40px;align-items:center;padding:48px 0 40px}.home-eyebrow{display:flex;gap:13px;align-items:center;letter-spacing:2px;font-size:11px;color:#81786e;margin:0 0 17px}.home-rule{width:35px;height:1px;background:#ded6c9}.home-hero h1{font-family:var(--serif);font-size:55px;line-height:1.24;letter-spacing:-1px;font-weight:700;margin:0 0 22px;color:#292724}.home-hero h1 em{font-style:normal;color:#a43e2f}.home-intro{color:#81786e;font-size:14px;line-height:1.9;margin:0}.home-hero-foot{display:flex;gap:12px;margin-top:27px;font-size:11px;color:#81786e}.home-hero-foot b{font-weight:400;color:#b7afa2}.home-hero-art{position:relative;height:346px;display:flex;align-items:center;justify-content:center}.home-hero-art:before{content:"";position:absolute;inset:48px 12px 24px;border:1px solid #ded6c9;border-radius:50%;transform:rotate(-14deg)}.home-fan-card{position:absolute;width:190px;aspect-ratio:2/3;box-shadow:0 16px 25px #3025121a;border-radius:9px;overflow:hidden}.home-fan-card img{display:block;width:100%;height:100%;object-fit:contain}.home-fan-back{transform:translate(-59px,8px) rotate(-14deg)}.home-fan-main{transform:translate(72px,-5px) rotate(10deg);box-shadow:0 18px 28px #30251222}.home-orbit-label{position:absolute;top:1px;right:11px;font-family:var(--serif);font-size:14px;color:#81786e;letter-spacing:2px}.home-art-spade{position:absolute;left:3px;bottom:20px;font-size:39px;color:#a43e2f;transform:rotate(-14deg)}.home-art-caption{position:absolute;bottom:-2px;right:4px;font-size:10px;letter-spacing:2px;color:#81786e}.home-query-section{background:#fffcf7;border:1px solid #ded6c9;border-radius:12px;padding:26px 30px;box-shadow:0 4px 20px #3a2d1a04}.home-query-title{display:flex;gap:14px;align-items:center;margin-bottom:19px}.home-step-number{border:1px solid #ded6c9;border-radius:50%;width:35px;height:35px;text-align:center;font:14px/33px Georgia,serif;color:#a43e2f}.home-query-title h2{font-size:17px;line-height:1.4;margin:0;font-weight:600}.home-query-title p{color:#81786e;font-size:11px;margin:4px 0 0}.home-search-box{display:flex;align-items:center;background:#f5f1e9;border:1px solid #ded6c9;border-radius:7px;padding:5px;min-height:62px}.home-search-box:focus-within{border-color:#b08673;box-shadow:0 0 0 3px #a43e2f0b}.home-input-label{font:13px Georgia,serif;color:#81786e;padding:0 19px;border-right:1px solid #ded6c9}#handout-uid{flex:1;min-width:0;border:0;background:none;height:46px;font-family:var(--sans);font-size:16px;padding:0 16px;color:#292724;letter-spacing:.5px;outline:none}#handout-uid::placeholder{font-size:13px;letter-spacing:0;color:#a39a8e}.home-search-button{border:0;background:#292724;color:#fffcf7;padding:15px 22px;border-radius:5px;font-size:13px;display:flex;gap:23px;align-items:center;white-space:nowrap}.home-search-button:hover{background:#a43e2f}.home-search-button span{font-size:18px}.home-clear-button{border:0;background:none;color:#81786e;font-size:23px;padding:0 12px}.home-feedback{color:#a43e2f;font-size:12px;margin:0}.home-feedback:not(:empty){margin-top:10px}.home-demo-row{display:flex;align-items:center;gap:10px;margin-top:15px;font-size:11px;color:#81786e;flex-wrap:wrap}.home-demo-button{background:none;border:1px solid #ded6c9;border-radius:4px;padding:4px 10px;font-size:11px;display:flex;gap:15px}.home-demo-button:hover{background:#f3e5dc;border-color:#cfb5a4}.home-demo-note{margin-left:auto;font-size:10px}.home-capture-row{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:18px;padding-top:15px;border-top:1px solid #ded6c9;color:#81786e;font-size:11px}.home-empty-state{padding:60px 0 45px;text-align:center}.home-empty-symbol{font-size:35px;color:#c2b5a3;line-height:1;margin-bottom:15px}.home-empty-state h2{font-family:var(--serif);font-size:20px;font-weight:400;margin:0}.home-empty-state p{color:#81786e;font-size:12px;line-height:1.9}.home-process{display:flex;justify-content:center;gap:17px;font-size:10px;color:#81786e;margin:22px 0 0}.home-process b{font-weight:400;color:#b7afa2}.handout-poster{margin-top:35px}.capture-mode .handout-poster{margin-top:0}.capture-mode #handout-tools{display:none}button:focus-visible,a:focus-visible{outline:3px solid #a43e2f;outline-offset:4px}
+@media(min-width:1400px){.home-main{padding:0 40px}.home-hero{min-height:470px}.home-hero h1{font-size:62px}.home-hero-art{height:360px}.home-fan-card{width:207px}}
+@media(max-width:1000px){.home-masthead{padding:22px 30px}.home-main{padding:0 30px}.home-hero{gap:22px;min-height:405px}.home-hero h1{font-size:45px}.home-hero-art{height:310px}.home-fan-card{width:155px}.home-fan-back{transform:translate(-38px,8px) rotate(-14deg)}.home-fan-main{transform:translate(52px,-5px) rotate(10deg)}.home-eyebrow{font-size:10px}}
+@media(max-width:600px){.home-masthead{padding:18px 20px}.home-brand{font-size:14px;gap:9px}.home-brand-sub{font-size:8px;letter-spacing:.5px}.home-brand-mark{height:35px;width:32px;font-size:24px;line-height:35px}.home-edition{font-size:9px;gap:5px}.home-main{padding:0 20px}.home-hero{grid-template-columns:1fr;padding:35px 0 27px;gap:0;min-height:0}.home-hero h1{font-size:40px;margin-bottom:18px}.home-intro{font-size:12px;line-height:1.9;max-width:280px}.home-hero-foot{margin-top:21px;font-size:9px;gap:8px}.home-hero-art{display:none}.home-eyebrow{font-size:9px;letter-spacing:1.4px;gap:9px}.home-query-section{padding:20px 16px}.home-query-title{gap:10px}.home-query-title h2{font-size:15px}.home-query-title p{font-size:10px}.home-step-number{width:30px;height:30px;line-height:28px;font-size:12px}.home-search-box{padding:4px;flex-wrap:wrap;gap:0;min-height:52px}.home-input-label{font-size:11px;padding:0 12px}#handout-uid{font-size:13px;padding:0 10px;height:42px;width:calc(100% - 100px)}.home-search-button{width:100%;justify-content:center;gap:16px;padding:11px;margin-top:4px}.home-clear-button{padding:0 7px}.home-demo-row{gap:6px;font-size:9px}.home-demo-button{padding:3px 7px;font-size:9px;gap:9px}.home-demo-note{display:none}.home-empty-state{padding:42px 0 20px}.home-empty-state h2{font-size:18px}.home-process{font-size:9px;gap:10px}.home-capture-row{font-size:10px;gap:10px}.home-capture-row .tool-button{font-size:10px}.handout-poster{margin-top:28px}.capture-mode .handout-poster{margin-top:0}}
+@media print{#handout-tools{display:none!important}.handout-poster{margin-top:0}}
 </style>
 </head>
 <body>
-  <div class="handout-tools" id="handout-tools">
-    <div class="tool-title"><span>♠</span><div><strong>女装直播 · 作者建议</strong><p>输入达人UID，生成专属建议</p></div></div>
-    <form id="handout-form" novalidate>
-      <label class="sr-only" for="handout-uid">达人UID</label>
-      <div class="query-field"><span>UID</span><input id="handout-uid" type="text" inputmode="numeric" autocomplete="off" placeholder="请输入完整UID"><button type="submit">生成建议 ↗</button></div>
-    </form>
-    <button type="button" id="capture-mode" class="tool-button" title="隐藏编辑工具栏，按Esc返回" disabled>截图模式</button>
-    <div class="tool-bottom"><p id="handout-feedback" role="status" aria-live="polite"></p><div class="examples"><span>快速体验</span><button type="button" data-uid="2394057181496332">示例一</button><button type="button" data-uid="2159866341231640">示例二</button><button type="button" data-uid="4248989648556164">示例三</button></div></div>
+  <div class="handout-home" id="handout-tools">
+    <header class="home-masthead"><a class="home-brand" href="handout.html" aria-label="女装内容力首页"><span class="home-brand-mark">♠</span><span>抖音电商<span class="home-brand-sub">直播金牌作者 · 四力提升指南</span></span></a><span class="home-edition"><i></i>女装 · 内容力</span></header>
+    <div class="home-main">
+      <section class="home-hero" aria-labelledby="home-title">
+        <div class="home-hero-copy"><p class="home-eyebrow"><span>女装行动牌</span><span class="home-rule"></span><span>从诊断，到下一场练习</span></p><h1 id="home-title">找到你的<br><em>内容提升</em>行动牌。</h1><p class="home-intro">输入达人UID，了解内容表现与改进方向，<br>再选择对应行动牌。让每一次练习都有依据。</p><div class="home-hero-foot"><span>6 维能力概览</span><b>·</b><span>4 个内容方向</span><b>·</b><span>16 张现有卡牌</span></div></div>
+        <div class="home-hero-art" aria-hidden="true"><div class="home-orbit-label">一张牌，一个动作</div><div class="home-fan-card home-fan-back"><img id="handout-hero-back" alt=""></div><div class="home-fan-card home-fan-main"><img id="handout-hero-main" alt=""></div><span class="home-art-spade">♠</span><span class="home-art-caption">看清方向，选好下一招。</span></div>
+      </section>
+      <section class="home-query-section" aria-labelledby="home-query-title">
+        <div class="home-query-title"><span class="home-step-number">01</span><div><h2 id="home-query-title">获取内容诊断与行动建议</h2><p>输入完整UID，查看针对您的改进方向、建议与行动卡牌。</p></div></div>
+        <form id="handout-form" novalidate><label class="sr-only" for="handout-uid">达人UID</label><div class="home-search-box"><span class="home-input-label">UID</span><input id="handout-uid" name="uid" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="请输入达人UID" aria-describedby="handout-feedback"><button class="home-clear-button" id="handout-clear" type="button" aria-label="清空UID" hidden>×</button><button class="home-search-button" type="submit">查看诊断建议 <span aria-hidden="true">↗</span></button></div><p id="handout-feedback" class="home-feedback" role="status" aria-live="polite"></p></form>
+        <div class="home-demo-row"><span>快速体验</span><button type="button" class="home-demo-button" data-uid="2394057181496332">示例一 <span>↗</span></button><button type="button" class="home-demo-button" data-uid="2159866341231640">示例二 <span>↗</span></button><button type="button" class="home-demo-button" data-uid="4248989648556164">示例三 <span>↗</span></button><span class="home-demo-note">示例UID来自本次达人名单</span></div>
+        <div class="home-capture-row"><span>生成建议后，切换截图模式即可分发。</span><button type="button" id="capture-mode" class="tool-button" title="隐藏编辑工具栏，按Esc返回" disabled>截图模式</button></div>
+      </section>
+      <section id="handout-empty" class="home-empty-state" aria-label="查询提示"><div class="home-empty-symbol">♠</div><h2>您的下一招，从这里开始。</h2><p>先了解问题与改进方向，再选择适合自己的动作。<br>点击卡牌可阅读完整执行步骤。</p><div class="home-process"><span>定位问题</span><b>→</b><span>了解改进做法</span><b>→</b><span>选择行动牌</span></div></section>
+    </div>
   </div>
   <button id="exit-capture" class="exit-capture" type="button" hidden>返回编辑</button>
-  <main id="handout-empty" class="handout-empty"><span>♠</span><h1>每一场直播，都有下一招。</h1><p>输入UID，查看属于您的内容提升建议与行动卡牌。</p></main>
   <main id="handout-poster" class="handout-poster" hidden>
     <header class="poster-header"><div class="poster-brand"><span class="brand-spade">♠</span><span>抖音电商<small>直播金牌作者 · 实力提升指南</small></span></div><span class="poster-edition">女装直播 · 专属提升建议</span></header>
     <div class="poster-layout">
@@ -165,6 +177,7 @@ dialog{padding:0;border:1px solid var(--line);border-radius:8px;width:min(580px,
     $('handout-card-image').removeAttribute('src');
     $('handout-card-image').alt = '';
     const match = AuthorHandout.findAuthor($('handout-uid').value, data);
+    $('handout-clear').hidden = !$('handout-uid').value;
     const found = match.status === 'found';
     $('handout-poster').hidden = !found;
     $('handout-empty').hidden = found;
@@ -186,8 +199,14 @@ dialog{padding:0;border:1px solid var(--line);border-radius:8px;width:min(580px,
   $('handout-form').addEventListener('submit', event => { event.preventDefault(); queryAuthor(); });
   $('handout-uid').addEventListener('input', () => {
     clearTimeout(queryTimer);
+    $('handout-clear').hidden = !$('handout-uid').value;
     if (!$('handout-uid').value.trim()) queryAuthor();
     else queryTimer = setTimeout(queryAuthor, 300);
+  });
+  $('handout-clear').addEventListener('click', () => {
+    $('handout-uid').value = '';
+    queryAuthor();
+    $('handout-uid').focus();
   });
   document.querySelectorAll('[data-uid]').forEach(button => button.addEventListener('click', () => {
     $('handout-uid').value = button.dataset.uid;
@@ -199,6 +218,8 @@ dialog{padding:0;border:1px solid var(--line);border-radius:8px;width:min(580px,
   $('handout-front').addEventListener('click', () => showCardSide('front'));
   $('handout-back').addEventListener('click', () => showCardSide('back'));
   document.addEventListener('keydown', event => { if (event.key === 'Escape') setCaptureMode(false); });
+  $('handout-hero-main').src = data.cards.SA.front;
+  $('handout-hero-back').src = data.cards.H7.front;
   const params = new URLSearchParams(window.location.search);
   if (params.get('uid')) {
     $('handout-uid').value = params.get('uid');
