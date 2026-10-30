@@ -147,7 +147,7 @@ SOFTWARE.
 
   async function download(poster, uid) {
     if (!poster || poster.hidden || !/^\d+$/.test(uid)) throw new Error('请先查询有效达人UID');
-    if (!root.htmlToImage || typeof root.htmlToImage.toBlob !== 'function') throw new Error('截图工具未就绪，请刷新重试');
+    if (!root.htmlToImage || typeof root.htmlToImage.toCanvas !== 'function') throw new Error('截图工具未就绪，请刷新重试');
     const snapshot = poster.cloneNode(true);
     const frame = document.createElement('iframe');
     frame.setAttribute('aria-hidden', 'true');
@@ -171,10 +171,34 @@ SOFTWARE.
       if (!height) throw new Error('诊断页尚未就绪，请重试');
       // 控制长图像素面积与边长，避免移动浏览器的大画布限制。
       const pixelRatio = Math.min(1.5, Math.sqrt(16000000 / (WIDTH * height)), 16000 / height);
-      const blob = await root.htmlToImage.toBlob(snapshot, {
+      const bounds = snapshot.getBoundingClientRect();
+      const cards = Array.from(snapshot.querySelectorAll('.handout-card img'), image => {
+        const rect = image.getBoundingClientRect();
+        if (!image.naturalWidth || !image.naturalHeight || !rect.width || !rect.height) {
+          throw new Error('卡牌图片尚未就绪，请重试');
+        }
+        // 保留卡位尺寸；卡面由下方直接绘制，绕开SVG中内嵌图片的浏览器差异。
+        image.style.visibility = 'hidden';
+        return { image, x: rect.left - bounds.left, y: rect.top - bounds.top,
+          width: rect.width, height: rect.height };
+      });
+      const canvas = await root.htmlToImage.toCanvas(snapshot, {
         width: WIDTH, height, pixelRatio, skipAutoScale: true,
         backgroundColor: '#fffdf8', fontEmbedCSS: '',
       });
+      const context = canvas && canvas.getContext('2d');
+      if (!context || !canvas.width || !canvas.height) throw new Error('截图生成失败，请重试');
+      const scaleX = canvas.width / WIDTH;
+      const scaleY = canvas.height / height;
+      cards.forEach(card => {
+        // 按object-fit:contain居中，保持原始卡面比例与完整内容。
+        const fit = Math.min(card.width / card.image.naturalWidth, card.height / card.image.naturalHeight);
+        const width = card.image.naturalWidth * fit;
+        const height = card.image.naturalHeight * fit;
+        context.drawImage(card.image, (card.x + (card.width - width) / 2) * scaleX,
+          (card.y + (card.height - height) / 2) * scaleY, width * scaleX, height * scaleY);
+      });
+      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
       if (!blob || !blob.size) throw new Error('截图生成失败，请重试');
       objectURL = URL.createObjectURL(blob);
       const link = document.createElement('a');
