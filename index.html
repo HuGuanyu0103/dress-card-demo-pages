@@ -595,7 +595,7 @@ main{max-width:1440px}.masthead{max-width:1440px}.result-heading{margin-top:44px
 
   $('hero-image-main').src = data.cards.SA.front;
   $('hero-image-back').src = data.cards.H7.front;
-  $('query-form').addEventListener('submit', event => { event.preventDefault(); queryAuthor(false); });
+  $('query-form').addEventListener('submit', event => { event.preventDefault(); queryAuthor(true); });
   $('uid-input').addEventListener('input', () => {
     clearTimeout(queryTimer);
     $('clear-input').hidden = !$('uid-input').value;

@@ -335,7 +335,7 @@ SOFTWARE.
     if (enabled) window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  function queryAuthor() {
+  function queryAuthor(scroll = false) {
     clearTimeout(queryTimer);
     if ($('handout-dialog').open) $('handout-dialog').close();
     openedCard = null;
@@ -370,6 +370,10 @@ SOFTWARE.
     $('handout-summary').textContent = match.summary;
     renderOverview(match.modules);
     renderModules(match.modules);
+    if (scroll) $('handout-poster').scrollIntoView({
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+      block: 'start',
+    });
   }
 
   async function downloadDiagnosis() {
@@ -396,7 +400,7 @@ SOFTWARE.
     }
   }
 
-  $('handout-form').addEventListener('submit', event => { event.preventDefault(); queryAuthor(); });
+  $('handout-form').addEventListener('submit', event => { event.preventDefault(); queryAuthor(true); });
   $('handout-uid').addEventListener('input', () => {
     clearTimeout(queryTimer);
     $('handout-clear').hidden = !$('handout-uid').value;
